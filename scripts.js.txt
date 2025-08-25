@@ -1,0 +1,16 @@
+// scripts.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  let memberCount = 0;
+  const totalMembers = 30; // Update this number as needed
+  const memberElement = document.getElementById('member-count');
+
+  const interval = setInterval(() => {
+    if (memberCount < totalMembers) {
+      memberCount++;
+      memberElement.textContent = memberCount;
+    } else {
+      clearInterval(interval);
+    }
+  }, 100);
+});

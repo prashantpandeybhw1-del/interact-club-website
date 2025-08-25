@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #0066cc;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+/* About Us Section */
+.about {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Total Members Section */
+.members {
+  background-color: #e6f7ff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.members h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.members p {
+  font-size: 2em;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* Social Section */
+.social {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.social h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.social a {
+  font-size: 1.2em;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}
+
+/* Additional Sections */
+.projects, .events, .contact {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.projects h2, .events h2, .contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.projects p, .events p, .contact p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
