@@ -1,103 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interact Club of Sai Global Academy</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interact Club - Making a Difference Together</title>
+  <meta name="description" content="Interact Club - Empowering youth through service, leadership, and fellowship.">
+  <meta name="keywords" content="Interact Club, Rotary, Service, Students, Community">
+  <meta name="author" content="Interact Club - School Name">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --text: #475569;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      overflow-x: hidden;
+      background: var(--light);
+    }
+
+    /* Navigation */
+    nav {
+      background: linear-gradient(135deg, var(--primary), #1e40af);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    .nav-active {
+      display: flex !important;
+      flex-direction: column;
+      background: var(--dark);
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff22" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+      animation: wave 15s linear infinite;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+      animation: fadeInUp 1s 0.2s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: all 0.3s;
+      animation: fadeInUp 1s 0.4s both;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <img src="images/interact-logo.png" alt="Interact Logo">
-  <h1>Service Above Self</h1>
-  <img src="images/district-3292-logo.png" alt="District Logo">
-</header>
-
-<section class="hero">
-  <h2>Welcome to Interact Club of Sai Global Academy</h2>
-  <p>Empowering youth to make a positive impact through leadership, service, and community programs.</p>
-</section>
-
-<section class="about">
-  <h2>About Us</h2>
-  <p>We are a group of 30+ dedicated members focused on youth leadership and community service. Our projects include education, health, environmental initiatives, and cultural activities.</p>
-  <div class="activities-grid">
-    <div class="activity">
-      <img src="images/donation-icon.png" alt="Donations">
-      <h3>Community Donations</h3>
-      <p>Providing essential resources to those in need.</p>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span>🌟</span> Interact Club
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <div class="activity">
-      <img src="images/education-icon.png" alt="Education">
-      <h3>Educational Programs</h3>
-      <p>Mentorship, literacy campaigns, and workshops.</p>
-    </div>
-    <div class="activity">
-      <img src="images/health-icon.png" alt="Health">
-      <h3>Health & Awareness</h3>
-      <p>Checkups, hygiene awareness, and wellness programs.</p>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<section class="members">
-  <h2>Total Members</h2>
-  <p id="member-count">0+</p>
-</section>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h1>Welcome to Interact Club</h1>
+    <p>Empowering youth to make a difference through service, leadership, and fellowship</p>
+    <a href="#about" class="cta-button">Discover Our Impact</a>
+  </section>
 
-<section class="reports">
-  <h2>Reports</h2>
-  <div class="reports-grid">
-    <img src="images/report1.jpg" alt="Report 1">
-    <img src="images/report2.jpg" alt="Report 2">
-    <img src="images/report3.jpg" alt="Report 3">
-  </div>
-</section>
+  <!-- (Keep your About, Programs, Members, Contact sections here unchanged) -->
 
-<section class="gallery">
-  <h2>Photo Gallery</h2>
-  <div class="gallery-grid">
-    <img src="images/photo1.jpg" alt="Photo 1">
-    <img src="images/photo2.jpg" alt="Photo 2">
-    <img src="images/photo3.jpg" alt="Photo 3">
-  </div>
-</section>
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">&copy; 2024 Interact Club - School Name. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; opacity: 0.8;">Sponsored by Rotary International</p>
+  </footer>
 
-<section class="board">
-  <h2>Board of Directors</h2>
-  <div class="board-member">
-    <img src="images/member1.jpg" alt="President">
-    <h3>President</h3>
-    <p>John Doe</p>
-  </div>
-  <div class="board-member">
-    <img src="images/member2.jpg" alt="Vice President">
-    <h3>Vice President</h3>
-    <p>Jane Smith</p>
-  </div>
-  <div class="board-member">
-    <img src="images/member3.jpg" alt="Secretary">
-    <h3>Secretary</h3>
-    <p>Robert Lee</p>
-  </div>
-</section>
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
-<section class="social">
-  <h2>Connect with Us</h2>
-  <a href="https://www.facebook.com/InteractClubSGA" target="_blank">Facebook Page</a>
-</section>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>Email: interactclub@saiglobal.edu.np</p>
-  <p>Phone: +977-1-2345678</p>
-</section>
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-<footer>
-  &copy; 2025 Interact Club of Sai Global Academy
-</footer>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
+    });
 
-<script src="scripts.js"></script>
+    // Dynamic year
+    document.getElementById("footer-text").innerHTML =
+      `&copy; ${new Date().getFullYear()} Interact Club - School Name. All rights reserved.`;
+  </script>
 </body>
 </html>
